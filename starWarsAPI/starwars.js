@@ -14,12 +14,12 @@ function getApi() {
             let hair_color = data.result[0].properties.hair_color
             htmlOutput.innerHTML =
                 `Name: ${nameOfChar}, Height: ${height} cm, Mass: ${mass} kg, Gender: ${gender}, Hair Color: ${hair_color}`
+            document.querySelector('#inputName').value = ''
         })
         .catch(err => {
             console.log(err)
             htmlOutput.innerHTML = 'Not Found'
         })
-
 }
 
 nameBtn.addEventListener('click', getApi)
